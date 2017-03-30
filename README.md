@@ -1,0 +1,2 @@
+# pyCard
+Cardgame's core
