@@ -1,7 +1,8 @@
- # -*- encoding: utf-8 -*-
+# -*- encoding: utf-8 -*-
 
 import sys
 import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.insert(0,
+                os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from pyCard import pyCard
+# from pyCard import pyCard

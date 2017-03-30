@@ -1,15 +1,14 @@
- # -*- encoding: utf-8 -*-
+# -*- encoding: utf-8 -*-
 
-from .context import pyCard
- 
+# from .context import pyCard
 
 import unittest
-import json
+# import json
+
 
 class TestMain(unittest.TestCase):
-    """ Test Main"""
-    
+    """ Test Main """
+
     def test_main(self):
-        #Always TRUE
+        # Always TRUE
         self.assertEqual('prueba', 'prueba')
-        

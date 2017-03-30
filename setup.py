@@ -12,7 +12,7 @@ setup(
     author='juanjo78git',
     author_email='juanjo78@gmail.com',
     description='Cardgame s core',
-    long_description="README on github : https://github.com/juanjo78git/pyCard",
+    long_description="README on github: https://github.com/juanjo78git/pyCard",
     install_requires=[
     ],
     url='https://github.com/juanjo78git/pyCard',
