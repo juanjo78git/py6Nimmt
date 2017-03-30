@@ -1,0 +1,17 @@
+sudo: false
+
+notifications: never
+
+language: python
+
+python:
+  - "3.5"
+
+# command to install dependencies
+install: "pip install -r requirements.txt"
+
+# command to run tests
+script: 
+    - coverage run -a -m unittest 'tests/test_main.py'
+
+after_success: coveralls
