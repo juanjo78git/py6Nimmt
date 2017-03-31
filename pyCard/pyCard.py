@@ -16,24 +16,33 @@ def main():
 
     d = Deck.Deck()
     iniDeck(d)
-    d.shuffle()
     print(d)
+    d.shuffle()
     print('Score: {}'.format(d.score()))
     c = d.draw()
     print(c)
-    print(d)
+    # print(d)
 
 
 def iniDeck(d):
-    for i in range(1, 11):
-        s1 = i % 10
-        s2 = i % 5
-        if s1 == 0:
-            c = Card.Card(i, i, 'none', -10)
-        elif s2 == 0:
-            c = Card.Card(i, i, 'none', -5)
-        else:
-            c = Card.Card(i, i, 'none', -1)
+    # Cartas del 1 al 104
+    # Los multiplos de 5 dan 2 puntos
+    # Los multiplos de 10, 3 puntos
+    # Los multiplos de 11, 5 puntos
+    # El 55 da 7 puntos (es múltiplo de 11 y de 5)
+    # El resto dan 1 punto
+    for i in range(1, 105):
+        score = 0
+        if i % 10 == 0:
+            score = -3
+        elif i % 5 == 0:
+            score = -2
+        if i % 11 == 0:
+            score = score - 5
+        if score == 0:
+            score = -1
+
+        c = Card.Card(i, i, 'none', score)
         d.add(c)
     return d.count()
 
