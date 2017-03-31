@@ -47,3 +47,6 @@ class Deck(object):
 
     def __repr__(self):
         return 'Deck with {} cards'.format(self.count())
+
+    def __add__(self, otro):
+        return Deck(self.list + otro.list)

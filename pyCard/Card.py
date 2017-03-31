@@ -11,8 +11,6 @@ class Card(object):
         self.score = score
 
     def __str__(self):
-        # return '{} {} {} {}'.format(
-        #                      self.id, self.value, self.suit, self.score)
         return '{:03}({:02})'.format(self.value, abs(self.score))
 
     def __repr__(self):
