@@ -10,7 +10,7 @@ def build_parser():
     parser = argparse.ArgumentParser()
 
     parser.add_argument('-t', '--test', type=str,
-                        dest='test', default='Test pyCard', metavar='test',
+                        dest='test', default='test pyCard', metavar='test',
                         help='Print test')
 
     parser.add_argument('-v', '--version', action='version',
