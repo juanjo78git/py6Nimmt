@@ -9,9 +9,9 @@ def build_parser():
     """ Parser args """
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('-t', '--test', type=str,
-                        dest='test', default='test pyCard', metavar='test',
-                        help='Print test')
+    parser.add_argument('-p', '--players', type=str,
+                        dest='players', default='2', metavar='players',
+                        help='Number of Players')
 
     parser.add_argument('-v', '--version', action='version',
                         version='%(prog)s ' + __version__)

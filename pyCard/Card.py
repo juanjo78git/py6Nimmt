@@ -10,6 +10,39 @@ class Card(object):
         self.suit = suit
         self.score = score
 
+    def __eq__(self, other):
+        if self.id == other.id:
+            return True
+        else:
+            return False
+
+    def __cmp__(self, otro):
+        diferencia = self.value - otro.value
+        if diferencia < 0:
+            return -1
+        elif diferencia > 0:
+            return 1
+        else:
+            return 0
+
+    def __eq__(self, otro):
+        return self.__cmp__(otro) == 0
+
+    def __ne__(self, otro):
+        return self.__cmp__(otro) != 0
+
+    def __gt__(self, otro):
+        return self.__cmp__(otro) == 1
+
+    def __ge__(self, otro):
+        return self.__cmp__(otro) >= 0
+
+    def __le__(self, otro):
+        return self.__cmp__(otro) <= 0
+
+    def __lt__(self, otro):
+        return self.__cmp__(otro) == -1
+
     def __str__(self):
         return '{:03}({:02})'.format(self.value, abs(self.score))
 

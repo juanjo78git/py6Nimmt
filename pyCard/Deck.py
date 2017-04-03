@@ -42,6 +42,35 @@ class Deck(object):
             i = i + c.score
         return i
 
+    def showCard(self, id):
+        # id is card's position (1 is first position)
+        id = id - 1
+        if id >= 0 and id < self.count() and self.count() > 0:
+            return self.list[id]
+        else:
+            return None
+
+    def deleteCard(self, id):
+        # id is card's position (1 is first position)
+        id = id - 1
+        if id >= 0 and id < self.count() and self.count() > 0:
+            # c = self.list[id]
+            # del self.list[id]
+            # return c
+            return self.list.pop(id)
+        else:
+            return None
+
+    def printCard(self):
+        s = ''
+        i = 1
+        for c in self.list:
+            s = '{} {:02}: {} |'.format(s, i, c).rstrip(' |')
+            if i % 5 == 0:
+                s = s + '\n'
+            i = i + 1
+        return s
+
     def __str__(self):
         return ' '.join('{} |'.format(c) for c in self.list).rstrip(' |')
 
