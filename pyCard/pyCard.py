@@ -16,7 +16,7 @@ def main():
     t = Table.Table(p)
     c = 0
     e = ''
-    while e != 'q':
+    while e != 'q' and not t.endgame():
         if c < p:
             c = c + 1
         else:
@@ -29,6 +29,7 @@ def main():
             t.printBoard()
             t.printPlayer(c)
         print(''.rjust(60, '='))
+    t.stats()
 
 
 if __name__ == '__main__':

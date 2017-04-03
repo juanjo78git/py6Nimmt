@@ -27,8 +27,6 @@ class Table(object):
                 hand.add(self.deck.draw())
             self.players.append(Player.Player(i+1, 'Player', hand))
 
-        self.MAX_CARDS_BY_ROW = 6
-
     def printPlayer(self, id=None):
         for p in self.players:
             if id is None or p.id == id:
@@ -38,7 +36,7 @@ class Table(object):
 
     def printBoard(self):
         i = 1
-        print(''.rjust(60, '-'))
+        print(''.rjust(60, '-') + 'Deck:'+ str(self.deck.count()))
         for b in self.board:
             print('{}: {}'.format(i, b))
             i = i + 1
@@ -55,12 +53,12 @@ class Table(object):
     def boardCorrect(self, card):
         i = 0
         z = -1
-        aux = Card.Card(0, 0, 'none', 0)
+        anterior = Card.Card(0, 0, 'none', 0)
         for b in self.board:
-            if aux <= b.list[-1] and card >= b.list[-1]:
+            if card >= b.lastCard() and anterior <= b.lastCard():
                 z = i
+                anterior = b.lastCard()
             i = i + 1
-            aux = b.list[-1]
         if z == -1:
             return None
         else:
@@ -86,6 +84,23 @@ class Table(object):
                 self.player(p).pile = self.player(p).pile + bc
                 bc.clean()
             bc.add(card)
+        if self.deck.count() > 0:
+            self.player(p).addHand(self.deck.draw())
+
+    def endgame(self):
+        fin = True
+        if self.deck.count() != 0:
+            fin = False
+        for p in self.players:
+            if p.countHand() != 0:
+                fin = False
+        return fin
+
+    def stats(self):
+        print(''.rjust(60, '='))
+        for p in self.players:
+            print('{}: {:03}'.format(p, p.score()))
+        print(''.rjust(60, '='))
 
     def iniDeck(self):
         # Initialize Deck

@@ -22,7 +22,8 @@ class Deck(object):
             return False
 
     def add(self, card):
-        self.list.append(card)
+        if not(card is None):
+            self.list.append(card)
 
     def draw(self):
         try:
@@ -47,6 +48,12 @@ class Deck(object):
         id = id - 1
         if id >= 0 and id < self.count() and self.count() > 0:
             return self.list[id]
+        else:
+            return None
+
+    def lastCard(self):
+        if self.count() > 0:
+            return self.list[-1]
         else:
             return None
 
