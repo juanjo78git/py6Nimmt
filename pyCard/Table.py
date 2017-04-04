@@ -16,13 +16,13 @@ class Table(object):
 
         self.discards = Deck.Deck()
 
-        self.board = [Deck.Deck(), Deck.Deck(), Deck.Deck(), Deck.Deck()]
+        self.board = [Deck.Deck(0), Deck.Deck(1), Deck.Deck(2), Deck.Deck(3)]
         for i in range(0, len(self.board)):
             self.board[i].add(self.deck.draw())
 
         self.players = []
         for i in range(0, numPlayers):
-            hand = Deck.Deck()
+            hand = Deck.Deck(i+1)
             for c in range(0, 10):
                 hand.add(self.deck.draw())
             self.players.append(Player.Player(i+1, 'Player', hand))
@@ -36,7 +36,7 @@ class Table(object):
 
     def printBoard(self):
         i = 1
-        print(''.rjust(60, '-') + 'Deck:'+ str(self.deck.count()))
+        print(''.rjust(60, '-') + 'Deck:' + str(self.deck.count()))
         for b in self.board:
             print('{}: {}'.format(i, b))
             i = i + 1
@@ -84,6 +84,22 @@ class Table(object):
                 self.player(p).pile = self.player(p).pile + bc
                 bc.clean()
             bc.add(card)
+        if self.deck.count() > 0:
+            self.player(p).addHand(self.deck.draw())
+
+    def playCard(self, p, c):
+        card = self.player(p).playCard(c)
+        if self.boardCorrect(card):
+            bc = self.boardCorrect(card)
+            if bc.count() >= 5:
+                self.player(p).pile = self.player(p).pile + bc
+                bc.clean()
+            bc.add(card)
+            return None
+        else:
+            return card
+
+    def drawCard(self, p):
         if self.deck.count() > 0:
             self.player(p).addHand(self.deck.draw())
 

@@ -12,22 +12,30 @@ def main():
     options = parser.parse_args()
 
     print('Players: ' + options.players)
-    p = int(options.players)
-    t = Table.Table(p)
-    c = 0
+    ps = int(options.players)
+    t = Table.Table(ps)
+    p = 0
     e = ''
     while e != 'q' and not t.endgame():
-        if c < p:
-            c = c + 1
+        if p < ps:
+            p = p + 1
         else:
-            c = 1
+            p = 1
         e = input("Next Player (q to Quit):")
         if e != 'q':
             t.printBoard()
-            t.printPlayer(c)
-            t.turnPlayer(c)
+            t.printPlayer(p)
+            c = int(input("Choose a card to play:"))
+            card = t.playCard(p, c)
+            if card:
+                print("The played card is lower than all "
+                      "the latest cards present on the rows.")
+                b = int(input("Choose a row:"))
+                t.catchBoard(p, b, card)
+            t.drawCard(p)
+        else:
             t.printBoard()
-            t.printPlayer(c)
+            t.printPlayer(p)
         print(''.rjust(60, '='))
     t.stats()
 

@@ -10,11 +10,11 @@ class Player(object):
         self.id = id
         self.name = name
         if hand is None:
-            self.hand = Deck.Deck()
+            self.hand = Deck.Deck(id)
         else:
             self.hand = hand
         if pile is None:
-            self.pile = Deck.Deck()
+            self.pile = Deck.Deck(id)
         else:
             self.pile = pile
 
