@@ -7,7 +7,8 @@
 
 ## Description
 
-Cardgame's core
+6 Nimmt! cardgame.
+You can read rules in https://en.wikipedia.org/wiki/6_Nimmt!
 
 ## System requirements
 
