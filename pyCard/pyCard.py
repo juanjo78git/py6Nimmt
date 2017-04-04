@@ -3,6 +3,7 @@
 
 from pyCard import buildparser
 from pyCard import Table
+import os
 
 
 def main():
@@ -22,9 +23,10 @@ def main():
         else:
             p = 1
         e = input("Next Player (q to Quit):")
+        clearscr()
         if e != 'q' and e != 'Q':
-            t.printBoard()
-            t.printPlayer(p)
+            print(t.printBoard())
+            print(t.printPlayer(p))
             c = input_int("Choose a card to play (q to Quit):",
                           1, t.player(p).countHand())
             if c:
@@ -43,11 +45,14 @@ def main():
                     t.drawCard(p)
             else:
                 e = 'q'
+            print(t.printBoard())
+            print(t.printPlayer(p))
         else:
-            t.printBoard()
-            t.printPlayer(p)
+            print(t.printBoard())
+            print(t.printPlayer(p))
         print(''.rjust(60, '='))
-    t.stats()
+    clearscr()
+    print(t.stats())
 
 
 def input_int(text='Insert a number (q to Quit):', min=0, max=10):
@@ -62,6 +67,16 @@ def input_int(text='Insert a number (q to Quit):', min=0, max=10):
                     return valor
         except ValueError:
             print('Value error')
+
+
+def clearscr():
+    osname = os.name
+    if osname == 'posix':
+        os.system('clear')
+    elif osname == 'nt' or osname == 'dos':
+        os.system('cls')
+    else:
+        print('\n' * 30)
 
 
 if __name__ == '__main__':

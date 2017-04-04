@@ -37,19 +37,22 @@ class Table(object):
         return len(self.discards)
 
     def printPlayer(self, id=None):
+        s = ''
         for p in self.players:
             if id is None or p.id == id:
-                print(str(p) + ':')
-                print(p.hand.printCard())
-                print('Pile: ' + str(p.pile))
+                s = s + str(p) + ':' + '\n'
+                s = s + p.hand.printCard() + '\n'
+                s = s + 'Pile: ' + str(p.pile) + '\n'
+        return s
 
     def printBoard(self):
         i = 1
-        print(''.rjust(60, '-') + 'Deck:' + str(self.deck.count()))
+        s = ''.rjust(60, '-') + 'Deck:' + str(self.deck.count()) + '\n'
         for b in self.board:
-            print('{}: {}'.format(i, b))
+            s = s + '{}: {}'.format(i, b) + '\n'
             i = i + 1
-        print(''.rjust(60, '-'))
+        s = s + ''.rjust(60, '-')
+        return s
 
     def shuffleDeck(self):
         self.deck.shuffle()
@@ -123,11 +126,12 @@ class Table(object):
         return fin
 
     def stats(self):
-        print(''.rjust(60, '='))
+        s = ''.rjust(60, '=') + '\n'
         for p in self.players:
-            print('{}: {:03}'.format(p, p.score()))
-            print(p.printPile())
-        print(''.rjust(60, '='))
+            s = s + '{}: {:03}'.format(p, p.score()) + '\n'
+            s = s + p.printPile() + '\n'
+        s = s + ''.rjust(60, '=')
+        return s
 
     def iniDeck(self):
         # Initialize Deck
