@@ -1,4 +1,4 @@
-# pyCard
+# py6Nimmt
 
 [![travis-ci][badge-travis]][travis]
 [![coveralls-io][badge-coveralls]][coveralls]
@@ -19,8 +19,8 @@ You can read rules in https://en.wikipedia.org/wiki/6_Nimmt!
 ### Installation
 
 ```shell
-git clone https://github.com/juanjo78git/pyCard.git
-cd pyCard
+git clone https://github.com/juanjo78git/py6Nimmt.git
+cd py6Nimmt
 $ pip install -e .  # for developers
 or
 $ pip install .
@@ -29,7 +29,7 @@ $ pip install .
 Or run without install:
 
 ```shell
-$ python -m pyCard.pyCard
+$ python -m py6Nimmt.py6Nimmt
 ```
 
 
@@ -39,13 +39,13 @@ MIT
 
 
 
-[bad-travis]:https://api.travis-ci.org/juanjo78git/pyCard.svg?branch=master
-[badge-travis]:https://img.shields.io/travis/juanjo78git/pyCard.svg?style=flat-square
-[badge-coveralls]:https://img.shields.io/coveralls/juanjo78git/pyCard.svg?style=flat-square
-[badge-issues]:http://img.shields.io/github/issues/juanjo78git/pyCard.svg?style=flat-square
+[bad-travis]:https://api.travis-ci.org/juanjo78git/py6Nimmt.svg?branch=master
+[badge-travis]:https://img.shields.io/travis/juanjo78git/py6Nimmt.svg?style=flat-square
+[badge-coveralls]:https://img.shields.io/coveralls/juanjo78git/py6Nimmt.svg?style=flat-square
+[badge-issues]:http://img.shields.io/github/issues/juanjo78git/py6Nimmt.svg?style=flat-square
 [badge-license]:http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
-[travis]:https://travis-ci.org/juanjo78git/pyCard
-[coveralls]:https://coveralls.io/github/juanjo78git/pyCard
-[issues]:https://github.com/juanjo78git/pyCard/issues
+[travis]:https://travis-ci.org/juanjo78git/py6Nimmt
+[coveralls]:https://coveralls.io/github/juanjo78git/py6Nimmt
+[issues]:https://github.com/juanjo78git/py6Nimmt/issues
 [license]:LICENSE
 
