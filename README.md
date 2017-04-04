@@ -8,7 +8,7 @@
 ## Description
 
 6 Nimmt! cardgame.
-You can read rules in https://en.wikipedia.org/wiki/6_Nimmt!
+You can read rules in https://en.wikipedia.org/wiki/6_Nimmt!#Rules
 
 ## System requirements
 
