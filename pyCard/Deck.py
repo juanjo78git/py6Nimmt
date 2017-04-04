@@ -86,4 +86,4 @@ class Deck(object):
         return 'Deck with {} cards'.format(self.count())
 
     def __add__(self, otro):
-        return Deck(self.list + otro.list)
+        return Deck(self.id, self.list + otro.list)

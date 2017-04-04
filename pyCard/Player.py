@@ -18,6 +18,12 @@ class Player(object):
         else:
             self.pile = pile
 
+    def printPile(self):
+        return str(self.pile.printCard())
+
+    def printHand(self):
+        return str(self.hand.printCard())
+
     def countHand(self):
         return self.hand.count()
 

@@ -27,6 +27,15 @@ class Table(object):
                 hand.add(self.deck.draw())
             self.players.append(Player.Player(i+1, 'Player', hand))
 
+    def countBoards(self):
+        return len(self.board)
+
+    def countDeck(self):
+        return len(self.deck)
+
+    def countDiscard(self):
+        return len(self.discards)
+
     def printPlayer(self, id=None):
         for p in self.players:
             if id is None or p.id == id:
@@ -71,6 +80,7 @@ class Table(object):
         self.board[b].add(card)
 
     def turnPlayer(self, p):
+        # DEPRECATED
         c = int(input("Choose a card to play:"))
         card = self.player(p).playCard(c)
         if self.boardCorrect(card) is None:
@@ -116,6 +126,7 @@ class Table(object):
         print(''.rjust(60, '='))
         for p in self.players:
             print('{}: {:03}'.format(p, p.score()))
+            print(p.printPile())
         print(''.rjust(60, '='))
 
     def iniDeck(self):
