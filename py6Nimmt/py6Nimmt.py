@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 
-from pyCard import buildparser
-from pyCard import Table
+from py6Nimmt import buildparser
+from py6Nimmt import Table
 import os
 
 

@@ -5,4 +5,4 @@ import os
 sys.path.insert(0,
                 os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-# from pyCard import pyCard
+# from py6Nimmt import py6Nimmt

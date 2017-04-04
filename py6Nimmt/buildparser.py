@@ -2,7 +2,7 @@
 
 import argparse
 
-from pyCard import __version__
+from py6Nimmt import __version__
 
 
 def build_parser():

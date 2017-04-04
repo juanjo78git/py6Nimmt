@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from pyCard import Card
-from pyCard import Deck
-from pyCard import Player
+from py6Nimmt import Card
+from py6Nimmt import Deck
+from py6Nimmt import Player
 
 
 class Table(object):

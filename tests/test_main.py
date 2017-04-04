@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 
-# from .context import pyCard
+# from .context import py6Nimmt
 
 import unittest
 # import json

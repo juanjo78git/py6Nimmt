@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from pyCard import Deck
+from py6Nimmt import Deck
 
 
 class Player(object):
