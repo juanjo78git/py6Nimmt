@@ -11,4 +11,4 @@ class TestMain(unittest.TestCase):
 
     def test_main(self):
         # Always TRUE
-        self.assertEqual('prueba', 'prueba')
+        self.assertEqual('test', 'test')
