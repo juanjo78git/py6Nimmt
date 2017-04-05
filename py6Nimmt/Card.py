@@ -10,12 +10,6 @@ class Card(object):
         self.suit = suit
         self.score = score
 
-    def __eq__(self, other):
-        if self.id == other.id:
-            return True
-        else:
-            return False
-
     def __cmp__(self, otro):
         diferencia = self.value - otro.value
         if diferencia < 0:

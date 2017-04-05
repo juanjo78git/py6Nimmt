@@ -22,8 +22,8 @@ def main():
             p = p + 1
         else:
             p = 1
-        e = input("Next Player (q to Quit):")
         clearscr()
+        e = input("Next Player (q to Quit):")
         if e != 'q' and e != 'Q':
             print(t.printBoard())
             print(t.printPlayer(p))

@@ -47,9 +47,12 @@ class Table(object):
 
     def printBoard(self):
         i = 1
-        s = ''.rjust(60, '-') + 'Deck:' + str(self.deck.count()) + '\n'
+        s = ''.rjust(52, '-') + 'Deck: ' + str(self.deck.count()) + '\n'
         for b in self.board:
-            s = s + '{}: {}'.format(i, b) + '\n'
+            s = s + '{}: {} |'.format(i, b)
+            for z in range(0, 5 - b.count()):
+                s = s + '         |'
+            s = s + '\n'
             i = i + 1
         s = s + ''.rjust(60, '-')
         return s
