@@ -12,9 +12,13 @@ def main():
     parser = buildparser.build_parser()
     options = parser.parse_args()
 
-    print('Players: ' + options.players)
     ps = int(options.players)
     t = Table.Table(ps)
+
+    if options.rules:
+        print(t.printRules())
+        exit()
+
     p = 0
     e = ''
     while e != 'Q' and e != 'q' and not t.endgame():
