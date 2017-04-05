@@ -83,7 +83,7 @@ class Deck(object):
         return ' '.join('{} |'.format(c) for c in self.list).rstrip(' |')
 
     def __repr__(self):
-        return 'Deck with {} cards'.format(self.count())
+        return '{:03}'.format(self.count())
 
     def __add__(self, otro):
         return Deck(self.id, self.list + otro.list)

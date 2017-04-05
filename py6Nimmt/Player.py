@@ -19,10 +19,10 @@ class Player(object):
             self.pile = pile
 
     def printPile(self):
-        return 'Pile: ' + str(self.pile.printCard())
+        return str(self.pile.printCard())
 
     def printHand(self):
-        return 'Hand: ' + str(self.hand.printCard())
+        return str(self.hand.printCard())
 
     def countHand(self):
         return self.hand.count()

@@ -21,25 +21,26 @@ def main():
 
     p = 0
     e = ''
+
     while e != 'Q' and e != 'q' and not t.endgame():
         if p < ps:
             p = p + 1
         else:
             p = 1
         clearscr()
-        e = input("Next Player (q to Quit):")
+        e = input('Next Player (q to Quit):')
         if e != 'q' and e != 'Q':
             print(t.printBoard())
             print(t.printPlayer(p))
-            c = input_int("Choose a card to play (q to Quit):",
+            c = input_int('Choose a card to play (q to Quit):',
                           1, t.player(p).countHand())
             if c:
                 card = t.playCard(p, c)
                 b = -1
                 if card:
-                    print("The played card is lower than all "
-                          "the latest cards present on the rows.")
-                    b = input_int("Choose a row (q to Quit):",
+                    print('The played card is lower than all '
+                          'the latest cards present on the rows.')
+                    b = input_int('Choose a row (q to Quit):',
                                   1, t.countBoards())
                     if b:
                         t.catchBoard(p, b, card)

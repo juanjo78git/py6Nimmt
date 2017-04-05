@@ -41,13 +41,13 @@ class Table(object):
         for p in self.players:
             if id is None or p.id == id:
                 s = s + str(p) + ':' + '\n'
-                s = s + p.hand.printCard() + '\n'
-                s = s + 'Pile: ' + str(p.pile) + '\n'
+                s = s + p.printHand() + '\n'
+                s = s + 'Pile: ' + p.printPile() + '\n'
         return s
 
     def printBoard(self):
         i = 1
-        s = ''.rjust(52, '-') + 'Deck: ' + str(self.deck.count()) + '\n'
+        s = ''.rjust(52, '-') + 'Deck: ' + str(self.countDeck()) + '\n'
         for b in self.board:
             s = s + '{}: {} |'.format(i, b)
             for z in range(0, 5 - b.count()):
