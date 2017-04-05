@@ -27,7 +27,7 @@ The winner is the player who has collected the fewest cattle heads.
 
 You can read complete rules in https://en.wikipedia.org/wiki/6_Nimmt!#Rules
 
-* Sample card:
+### Sample card:
 
   004(01)
 
