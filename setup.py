@@ -17,7 +17,7 @@ setup(
     url='https://github.com/juanjo78git/py6Nimmt',
     classifiers=[
         'Programming Language :: Python',
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 3.5',
