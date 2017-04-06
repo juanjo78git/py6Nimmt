@@ -13,7 +13,14 @@ def main():
     options = parser.parse_args()
 
     ps = int(options.players)
-    t = Table.Table(ps)
+    if ps < 1 or ps > 10:
+        print('The argument value of -ps ' +
+              'must be a number between 1 and 10: {}.'.format(ps))
+        exit()
+    pn = list(options.namesPlayers)
+    if ps < len(pn):
+        ps = len(pn)
+    t = Table.Table(ps, pn)
 
     if options.rules:
         print(t.printRules())
@@ -32,6 +39,7 @@ def main():
         if e != 'q' and e != 'Q':
             print(t.printBoard())
             print(t.printPlayer(p))
+            print('Pile: ' + t.printPlayerPile(p))
             c = input_int('Choose a card to play (q to Quit):',
                           1, t.player(p).countHand())
             if c:
@@ -52,9 +60,11 @@ def main():
                 e = 'q'
             print(t.printBoard())
             print(t.printPlayer(p))
+            print('Pile: ' + t.printPlayerPile(p))
         else:
             print(t.printBoard())
             print(t.printPlayer(p))
+            print('Pile: ' + t.printPlayerPile(p))
         print(''.rjust(60, '='))
     clearscr()
     print(t.stats())

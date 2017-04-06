@@ -8,7 +8,7 @@ from py6Nimmt import Player
 class Table(object):
     """ Table """
 
-    def __init__(self, numPlayers=2):
+    def __init__(self, numPlayers=2, namesPlayers=[]):
 
         self.deck = Deck.Deck()
         self.iniDeck()
@@ -25,7 +25,14 @@ class Table(object):
             hand = Deck.Deck(i+1)
             for c in range(0, 10):
                 hand.add(self.deck.draw())
-            self.players.append(Player.Player(i+1, 'Player', hand))
+            if i >= len(namesPlayers):
+                self.players.append(Player.Player(i+1, 'Player', hand))
+            else:
+                if namesPlayers[i]:
+                    self.players.append(Player.Player(i+1,
+                                                      namesPlayers[i], hand))
+                else:
+                    self.players.append(Player.Player(i+1, 'Player', hand))
 
     def countBoards(self):
         return len(self.board)
@@ -42,12 +49,18 @@ class Table(object):
             if id is None or p.id == id:
                 s = s + str(p) + ':' + '\n'
                 s = s + p.printHand() + '\n'
-                s = s + 'Pile: ' + p.printPile() + '\n'
+        return s
+
+    def printPlayerPile(self, id=None):
+        s = ''
+        for p in self.players:
+            if id is None or p.id == id:
+                s = s + p.printPile() + '\n'
         return s
 
     def printBoard(self):
         i = 1
-        s = ''.rjust(52, '-') + 'Deck: ' + str(self.countDeck()) + '\n'
+        s = ''.rjust(57, '-') + ' ' + str(self.countDeck()) + '\n'
         for b in self.board:
             s = s + '{}: {} |'.format(i, b)
             for z in range(0, 5 - b.count()):
@@ -166,14 +179,14 @@ class Table(object):
         return self.deck.count()
 
     def __str__(self):
-        return 'Deck:{} Discards:{} Players:{}'.format(self.deck.count(),
-                                                       self.discards.count(),
-                                                       len(self.players))
+        return '{} - {} - {}'.format(self.deck.count(),
+                                     self.discards.count(),
+                                     len(self.players))
 
     def __repr__(self):
-        return 'Deck:{} Discards:{} Players:{}'.format(self.deck.count(),
-                                                       self.discards.count(),
-                                                       len(self.players))
+        return '{} - {} - {}'.format(self.deck.count(),
+                                     self.discards.count(),
+                                     len(self.players))
 
     def printRules(self):
         text = ('Rules'

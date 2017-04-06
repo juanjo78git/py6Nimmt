@@ -11,9 +11,13 @@ def build_parser():
     parser = argparse.ArgumentParser(formatter_class=RawTextHelpFormatter,
                                      description='6 Nimmt! cardgame')
 
-    parser.add_argument('-p', '--players', type=str,
-                        dest='players', default='2', metavar='players',
-                        help='Number of Players')
+    parser.add_argument('-p', '--players', type=int,
+                        dest='players', default='2', metavar='num_players',
+                        help='Number of Players (between 1 and 10)')
+
+    parser.add_argument('-pn', '--players-name', type=str, nargs='*',
+                        dest='namesPlayers', default=[],
+                        metavar='player-name', help='Names of players')
 
     parser.add_argument('-r', '--rules',
                         dest='rules', action='store_true',
