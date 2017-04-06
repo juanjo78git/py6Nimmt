@@ -27,8 +27,8 @@ def main():
             p = p + 1
         else:
             p = 1
-        clearscr()
         e = input('Next Player (q to Quit):')
+        clearscr()
         if e != 'q' and e != 'Q':
             print(t.printBoard())
             print(t.printPlayer(p))
@@ -58,6 +58,7 @@ def main():
         print(''.rjust(60, '='))
     clearscr()
     print(t.stats())
+    print('Winner: ' + str(t.winner()))
 
 
 def input_int(text='Insert a number (q to Quit):', min=0, max=10):

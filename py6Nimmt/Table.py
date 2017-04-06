@@ -31,10 +31,10 @@ class Table(object):
         return len(self.board)
 
     def countDeck(self):
-        return len(self.deck)
+        return self.deck.count()
 
     def countDiscard(self):
-        return len(self.discards)
+        return self.discards.count()
 
     def printPlayer(self, id=None):
         s = ''
@@ -64,6 +64,13 @@ class Table(object):
         for p in self.players:
             if p.id == id:
                 return p
+
+    def winner(self):
+        win = self.player(1)
+        for p in self.players:
+            if p > win:
+                win = p
+        return win
 
     def boardCorrect(self, card):
         i = 0

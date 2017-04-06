@@ -48,8 +48,35 @@ class Player(object):
     def __repr__(self):
         return '{} {}'.format(self.id, self.name)
 
-    def __eq__(self, other):
-        if self.id == other.id:
+    def __eq__(self, otro):
+        if self.id == otro.id:
             return True
         else:
             return False
+
+    def __ne__(self, otro):
+        if self.id != otro.id:
+            return True
+        else:
+            return False
+
+    def __cmp__(self, otro):
+        diferencia = self.score() - otro.score()
+        if diferencia < 0:
+            return -1
+        elif diferencia > 0:
+            return 1
+        else:
+            return 0
+
+    def __gt__(self, otro):
+        return self.__cmp__(otro) == 1
+
+    def __ge__(self, otro):
+        return self.__cmp__(otro) >= 0
+
+    def __le__(self, otro):
+        return self.__cmp__(otro) <= 0
+
+    def __lt__(self, otro):
+        return self.__cmp__(otro) == -1
