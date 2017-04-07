@@ -26,4 +26,8 @@ def build_parser():
     parser.add_argument('-v', '--version', action='version',
                         version='%(prog)s ' + __version__)
 
+    parser.add_argument('-l', '--lang', metavar='Locale',
+                        dest='lang', type=str, default='',
+                        help='Select language (es, en)')
+
     return parser
