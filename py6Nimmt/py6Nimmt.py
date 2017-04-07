@@ -34,8 +34,8 @@ def main():
 
     ps = int(options.players)
     if ps < 1 or ps > 10:
-        print(_('The argument value of -ps ' +
-              'must be a number between 1 and 10: ') + '{}.'.format(ps))
+        print(_('The argument value of -ps must be a number between 1 and 10:')
+              + ' {}.'.format(ps))
         exit()
     pn = list(options.namesPlayers)
     if ps < len(pn):

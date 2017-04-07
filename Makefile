@@ -15,6 +15,11 @@ pre:
 
 flake8:
 	flake8 py6Nimmt
+    
+po:
+	xgettext --language=Python --output=py6Nimmt/locale/messages.pot py6Nimmt/py6Nimmt.py
+	msgmerge --update --no-fuzzy-matching --backup=off py6Nimmt/locale/en/LC_MESSAGES/py6Nimmt.po py6Nimmt/locale/messages.pot
+	msgmerge --update --no-fuzzy-matching --backup=off py6Nimmt/locale/es/LC_MESSAGES/py6Nimmt.po py6Nimmt/locale/messages.pot
 
 mo:
 	msgfmt py6Nimmt/locale/en/LC_MESSAGES/py6Nimmt.po -o py6Nimmt/locale/en/LC_MESSAGES/py6Nimmt.mo
