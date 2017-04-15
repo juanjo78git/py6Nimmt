@@ -2,6 +2,7 @@
 
 [![travis-ci][badge-travis]][travis]
 [![coveralls-io][badge-coveralls]][coveralls]
+[![Dependency Status](https://www.versioneye.com/user/projects/58f13f1e0f9f350049e37006/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/58f13f1e0f9f350049e37006)
 [![pypi-version][badge-pypi-version]][pypi]
 [![Open issues][badge-issues]][issues]
 [![License][badge-license]][license]
