@@ -44,17 +44,15 @@ You can read complete rules in https://en.wikipedia.org/wiki/6_Nimmt!#Rules
 ### Installation
 
 ```shell
-git clone https://github.com/juanjo78git/py6Nimmt.git
-cd py6Nimmt
-$ pip install -e .  # for developers
-or
-$ pip install .
+$ pip install py6Nimmt
 ```
 
-Or run without install:
-
+For developers:
 ```shell
-$ python -m py6Nimmt.py6Nimmt
+git clone https://github.com/juanjo78git/py6Nimmt.git
+cd py6Nimmt
+$ pip install -e . 
+$ python -m py6Nimmt.py6Nimmt  # Or run without install
 ```
 
 
