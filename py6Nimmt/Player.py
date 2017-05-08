@@ -6,15 +6,15 @@ from py6Nimmt import Deck
 class Player(object):
     """ Player """
 
-    def __init__(self, id, name='Player', hand=None, pile=None):
-        self.id = id
+    def __init__(self, ids, name='Player', hand=None, pile=None):
+        self.id = ids
         self.name = name
         if hand is None:
-            self.hand = Deck.Deck(id)
+            self.hand = Deck.Deck(ids)
         else:
             self.hand = hand
         if pile is None:
-            self.pile = Deck.Deck(id)
+            self.pile = Deck.Deck(ids)
         else:
             self.pile = pile
 
@@ -39,8 +39,8 @@ class Player(object):
     def addHand(self, card):
         self.hand.add(card)
 
-    def playCard(self, id):
-        return self.hand.deleteCard(id)
+    def playCard(self, ids):
+        return self.hand.deleteCard(ids)
 
     def __str__(self):
         return '{} {:02}'.format(self.name, self.id)
