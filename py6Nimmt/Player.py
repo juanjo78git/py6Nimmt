@@ -49,16 +49,10 @@ class Player(object):
         return '{} {}'.format(self.id, self.name)
 
     def __eq__(self, otro):
-        if self.id == otro.id:
-            return True
-        else:
-            return False
+        return bool(self.id == otro.id)
 
     def __ne__(self, otro):
-        if self.id != otro.id:
-            return True
-        else:
-            return False
+        return bool(self.id != otro.id)
 
     def __cmp__(self, otro):
         diferencia = self.score() - otro.score()
