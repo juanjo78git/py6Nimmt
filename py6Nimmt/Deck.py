@@ -6,8 +6,8 @@ from random import shuffle
 class Deck(object):
     """ Deck """
 
-    def __init__(self, id=0, lista=None):
-        self.id = id
+    def __init__(self, ids=0, lista=None):
+        self.id = ids
         if lista is None:
             self.list = []
         else:
