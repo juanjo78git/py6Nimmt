@@ -54,10 +54,10 @@ class Table(object):
                 s = s + p.printHand() + '\n'
         return s
 
-    def printPlayerPile(self, id=None):
+    def printPlayerPile(self, ids=None):
         s = ''
         for p in self.players:
-            if id is None or p.id == id:
+            if ids is None or p.id == ids:
                 s = s + p.printPile() + '\n'
         return s
 
