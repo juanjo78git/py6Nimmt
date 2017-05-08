@@ -43,10 +43,10 @@ class Table(object):
     def countDiscard(self):
         return self.discards.count()
 
-    def printPlayer(self, id=None):
+    def printPlayer(self, ids=None):
         s = ''
         for p in self.players:
-            if id is None or p.id == id:
+            if ids is None or p.id == ids:
                 s = s + str(p) + ':' + '\n'
                 s = s + p.printHand() + '\n'
         return s
@@ -73,9 +73,9 @@ class Table(object):
     def shuffleDeck(self):
         self.deck.shuffle()
 
-    def player(self, id):
+    def player(self, ids):
         for p in self.players:
-            if p.id == id:
+            if p.id == ids:
                 return p
 
     def winner(self):
