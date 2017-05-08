@@ -63,7 +63,7 @@ class Table(object):
         s = ''.rjust(57, '-') + ' ' + str(self.countDeck()) + '\n'
         for b in self.board:
             s = s + '{}: {} |'.format(i, b)
-            for z in range(0, 5 - b.count()):
+            for _ in range(0, 5 - b.count()):
                 s = s + '         |'
             s = s + '\n'
             i = i + 1
