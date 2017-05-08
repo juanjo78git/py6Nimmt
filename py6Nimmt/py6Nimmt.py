@@ -21,7 +21,7 @@ def main():
         if sys.platform.startswith('win'):
             import locale
             if os.getenv('LANG') is None:
-                lang, enc = locale.getdefaultlocale()
+                lang = locale.getdefaultlocale()
                 os.environ['LANG'] = lang
     gettext.textdomain('py6Nimmt')
     gettext.bindtextdomain('py6Nimmt', './py6Nimmt/locale')
@@ -88,7 +88,7 @@ def main():
     print(_('Winner: ') + str(t.winner()))
 
 
-def input_int(text='Insert a number (q to Quit):', min=0, max=10):
+def input_int(text='Insert a number (q to Quit):', minim=0, maxim=10):
     while True:
         valor = input(text)
         try:
@@ -96,7 +96,7 @@ def input_int(text='Insert a number (q to Quit):', min=0, max=10):
                 return None
             else:
                 valor = int(valor)
-                if valor >= min and valor <= max:
+                if valor >= minim and valor <= maxim:
                     return valor
         except ValueError:
             print(_('Value error'))
