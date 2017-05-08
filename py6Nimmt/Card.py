@@ -4,8 +4,8 @@
 class Card(object):
     """ Card """
 
-    def __init__(self, id, value, suit, score):
-        self.id = id
+    def __init__(self, ids, value, suit, score):
+        self.id = ids
         self.value = value
         self.suit = suit
         self.score = score
