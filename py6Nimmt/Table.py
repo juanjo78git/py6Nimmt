@@ -23,7 +23,7 @@ class Table(object):
         self.players = []
         for i in range(0, numPlayers):
             hand = Deck.Deck(i+1)
-            for c in range(0, 10):
+            for _ in range(0, 10):
                 hand.add(self.deck.draw())
             if i >= len(namesPlayers):
                 self.players.append(Player.Player(i+1, 'Player', hand))
