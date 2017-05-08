@@ -17,10 +17,7 @@ class Deck(object):
         return len(self.list)
 
     def isEmpty(self):
-        if self.list == []:
-            return True
-        else:
-            return False
+        return bool(self.list == [])
 
     def add(self, card):
         if not(card is None):
@@ -29,7 +26,7 @@ class Deck(object):
     def draw(self):
         try:
             return self.list.pop()
-        except IndexError as e:
+        except IndexError:
             return None
 
     def shuffle(self):
