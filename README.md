@@ -2,6 +2,7 @@
 
 [![travis-ci][badge-travis]][travis]
 [![coveralls-io][badge-coveralls]][coveralls]
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/aa3e84f4934e45df950da49a5b104fb8)](https://www.codacy.com/app/juanjo78git/py6Nimmt?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=juanjo78git/py6Nimmt&amp;utm_campaign=Badge_Grade)
 [![Dependency Status](https://www.versioneye.com/user/projects/58f13f1e0f9f350049e37006/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/58f13f1e0f9f350049e37006)
 [![pypi-version][badge-pypi-version]][pypi]
 [![Open issues][badge-issues]][issues]
