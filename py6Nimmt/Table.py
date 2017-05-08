@@ -21,6 +21,9 @@ class Table(object):
             self.board[i].add(self.deck.draw())
 
         self.players = []
+        if namesPlayers is None:
+            namesPlayers = []
+
         for i in range(0, numPlayers):
             hand = Deck.Deck(i+1)
             for _ in range(0, 10):
