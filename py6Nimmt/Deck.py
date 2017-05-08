@@ -6,12 +6,12 @@ from random import shuffle
 class Deck(object):
     """ Deck """
 
-    def __init__(self, id=0, list=None):
+    def __init__(self, id=0, lista=None):
         self.id = id
-        if list is None:
+        if lista is None:
             self.list = []
         else:
-            self.list = list
+            self.list = lista
 
     def count(self):
         return len(self.list)
@@ -41,11 +41,11 @@ class Deck(object):
             i = i + c.score
         return i
 
-    def showCard(self, id):
+    def showCard(self, ids):
         # id is card's position (1 is first position)
-        id = id - 1
-        if id >= 0 and id < self.count() and self.count() > 0:
-            return self.list[id]
+        ids = ids - 1
+        if ids >= 0 and ids < self.count() and self.count() > 0:
+            return self.list[ids]
         else:
             return None
 
@@ -55,14 +55,14 @@ class Deck(object):
         else:
             return None
 
-    def deleteCard(self, id):
+    def deleteCard(self, ids):
         # id is card's position (1 is first position)
-        id = id - 1
-        if id >= 0 and id < self.count() and self.count() > 0:
-            # c = self.list[id]
-            # del self.list[id]
+        ids = ids - 1
+        if ids >= 0 and ids < self.count() and self.count() > 0:
+            # c = self.list[ids]
+            # del self.list[ids]
             # return c
-            return self.list.pop(id)
+            return self.list.pop(ids)
         else:
             return None
 
