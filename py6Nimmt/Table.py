@@ -8,7 +8,7 @@ from py6Nimmt import Player
 class Table(object):
     """ Table """
 
-    def __init__(self, numPlayers=2, namesPlayers=[]):
+    def __init__(self, numPlayers=2, namesPlayers=None):
 
         self.deck = Deck.Deck()
         self.iniDeck()
