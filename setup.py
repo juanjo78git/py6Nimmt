@@ -12,7 +12,7 @@ setup(
     author='juanjo78git',
     author_email='juanjo78@gmail.com',
     description='6 Nimmt! cardgame',
-    long_description="README on github: https://github.com/juanjo78git/py6Nimmt",
+    long_description="On github: https://github.com/juanjo78git/py6Nimmt",
     install_requires=[],
     url='https://github.com/juanjo78git/py6Nimmt',
     classifiers=[
