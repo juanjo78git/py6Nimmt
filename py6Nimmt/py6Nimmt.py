@@ -21,7 +21,7 @@ def main():
         if sys.platform.startswith('win'):
             import locale
             if os.getenv('LANG') is None:
-                lang = locale.getdefaultlocale()
+                lang, enc = locale.getdefaultlocale()
                 os.environ['LANG'] = lang
     gettext.textdomain('py6Nimmt')
     gettext.bindtextdomain('py6Nimmt', './py6Nimmt/locale')
